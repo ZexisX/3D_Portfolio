@@ -167,16 +167,16 @@ export const experiences = [
 
 export const socialLinks = [
     {
-      name: "Contact",
-      link: "/contact",
+      name: "Telegram",
+      link: "https://t.me/A3d0tr1sX",
     },
     {
       name: "GitHub",
-      link: "https://github.com/YourGitHubUsername",
+      link: "https://github.com/levinhkhangzz",
     },
     {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/YourLinkedInUsername",
+      name: "Instagram",
+      link: "https://instagram.com/williamcachamwri",
     },
   ];
 
