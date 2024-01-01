@@ -1,12 +1,59 @@
+import React from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-
 import { CTA } from "../components";
-import { experiences, skills } from "../constants";
+import { skills } from "../constants";
 
 import "react-vertical-timeline-component/style.min.css";
+
+const education = [
+  {
+    title: "Bachelor's Degree in Computer Science",
+    school: "Your University",
+    date: "2010 - 2013",
+    icon: "path-to-university-icon",
+    iconBg: "#your-color",
+    points: [
+      "Studied Computer Science with a focus on software development.",
+      "Participated in various coding projects and team collaborations.",
+    ],
+  },
+  {
+    title: "Master's Degree in Software Engineering",
+    school: "Another University",
+    date: "2014 - 2016",
+    icon: "path-to-another-university-icon",
+    iconBg: "#another-color",
+    points: [
+      "Specialized in Software Engineering and advanced coding techniques.",
+      "Thesis on cutting-edge technologies in the software industry.",
+    ],
+  },
+  {
+    title: "Ph.D. in Computer Science",
+    school: "Yet Another University",
+    date: "2017 - 2020",
+    icon: "path-to-yet-another-university-icon",
+    iconBg: "#yet-another-color",
+    points: [
+      "Conducted research in Artificial Intelligence and Machine Learning.",
+      "Published several research papers in top-tier conferences.",
+    ],
+  },
+  {
+    title: "Post-Doctoral Research",
+    school: "Research Institute",
+    date: "2021 - 2023",
+    icon: "path-to-research-institute-icon",
+    iconBg: "#research-institute-color",
+    points: [
+      "Continued research in cutting-edge areas of Computer Science.",
+      "Collaborated with international researchers and contributed to projects.",
+    ],
+  },
+];
 
 const About = () => {
   return (
@@ -14,10 +61,11 @@ const About = () => {
       <h1 className='head-text'>
         Hello, I'm{" "}
         <span className='blue-gradient_text font-semibold drop-shadow'>
-          {" "}
-          Adrian
+          Le Vinh Khang
         </span>{" "}
-        👋
+        <span className='hand-icon' role='img' aria-label='Waving Hand'>
+          👋
+        </span>
       </h1>
 
       <div className='mt-5 flex flex-col gap-3 text-slate-500'>
@@ -47,26 +95,26 @@ const About = () => {
       </div>
 
       <div className='py-16'>
-        <h3 className='subhead-text'>Work Experience.</h3>
+        <h3 className='subhead-text'>Education</h3>
         <div className='mt-5 flex flex-col gap-3 text-slate-500'>
           <p>
-            I've worked with all sorts of companies, leveling up my skills and
-            teaming up with smart people. Here's the rundown:
+            I pursued my education to build a strong foundation in Computer
+            Science. Here are the details:
           </p>
         </div>
 
         <div className='mt-12 flex'>
           <VerticalTimeline>
-            {experiences.map((experience, index) => (
+            {education.map((edu, index) => (
               <VerticalTimelineElement
-                key={experience.company_name}
-                date={experience.date}
-                iconStyle={{ background: experience.iconBg }}
+                key={edu.school}
+                date={edu.date}
+                iconStyle={{ background: edu.iconBg }}
                 icon={
                   <div className='flex justify-center items-center w-full h-full'>
                     <img
-                      src={experience.icon}
-                      alt={experience.company_name}
+                      src={edu.icon}
+                      alt={edu.school}
                       className='w-[60%] h-[60%] object-contain'
                     />
                   </div>
@@ -74,26 +122,26 @@ const About = () => {
                 contentStyle={{
                   borderBottom: "8px",
                   borderStyle: "solid",
-                  borderBottomColor: experience.iconBg,
+                  borderBottomColor: edu.iconBg,
                   boxShadow: "none",
                 }}
               >
                 <div>
                   <h3 className='text-black text-xl font-poppins font-semibold'>
-                    {experience.title}
+                    {edu.title}
                   </h3>
                   <p
                     className='text-black-500 font-medium text-base'
                     style={{ margin: 0 }}
                   >
-                    {experience.company_name}
+                    {edu.school}
                   </p>
                 </div>
 
                 <ul className='my-5 list-disc ml-5 space-y-2'>
-                  {experience.points.map((point, index) => (
+                  {edu.points.map((point, index) => (
                     <li
-                      key={`experience-point-${index}`}
+                      key={`education-point-${index}`}
                       className='text-black-500/50 font-normal pl-1 text-sm'
                     >
                       {point}
@@ -108,6 +156,7 @@ const About = () => {
 
       <hr className='border-slate-200' />
 
+      {/* Add CTA component */}
       <CTA />
     </section>
   );
