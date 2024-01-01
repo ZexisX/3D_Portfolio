@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
-import anime from 'animejs/lib/anime.es.js';  // Import animejs library
+import anime from 'animejs/lib/anime.es.js'; 
 import { socialLinks } from "../constants";
 
 const Footer = () => {
