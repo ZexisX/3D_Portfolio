@@ -1,4 +1,5 @@
 import { meta, shopify, starbucks, tesla } from "../assets/images";
+
 import {
     car,
     contact,
@@ -166,21 +167,18 @@ export const experiences = [
 
 export const socialLinks = [
     {
-        name: 'Contact',
-        iconUrl: contact,
-        link: '/contact',
+      name: "Contact",
+      link: "/contact",
     },
     {
-        name: 'GitHub',
-        iconUrl: github,
-        link: 'https://github.com/YourGitHubUsername',
+      name: "GitHub",
+      link: "https://github.com/YourGitHubUsername",
     },
     {
-        name: 'LinkedIn',
-        iconUrl: linkedin,
-        link: 'https://www.linkedin.com/in/YourLinkedInUsername',
-    }
-];
+      name: "LinkedIn",
+      link: "https://www.linkedin.com/in/YourLinkedInUsername",
+    },
+  ];
 
 export const projects = [
     {

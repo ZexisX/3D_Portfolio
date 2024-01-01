@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
+import anime from "animejs/lib/anime.es.js"; // Import animejs library
 
 import { Fox } from "../models";
 import useAlert from "../hooks/useAlert";
@@ -33,7 +34,7 @@ const Contact = () => {
           from_name: form.name,
           to_name: "Le Vinh Khang",
           from_email: form.email,
-          to_email: "levinhkhang621@gmail.com",
+          to_email: "levinhkhang631@gmail.com",
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -71,12 +72,21 @@ const Contact = () => {
       );
   };
 
+  useEffect(() => {
+    anime({
+      targets: '.animate-entrance',
+      translateY: [20, 0],
+      opacity: [0, 1],
+      delay: anime.stagger(100),
+    });
+  }, []);
+
   return (
-    <section className='relative flex lg:flex-row flex-col max-container'>
+    <section className='relative flex lg:flex-row flex-col max-container animate-entrance'>
       {alert.show && <Alert {...alert} />}
 
       <div className='flex-1 min-w-[50%] flex flex-col'>
-        <h1 className='head-text'>Get in Touch</h1>
+        <h1 className='head-text blue-gradient_text'>Get in Touch</h1>
 
         <form
           ref={formRef}
@@ -128,7 +138,7 @@ const Contact = () => {
           <button
             type='submit'
             disabled={loading}
-            className='btn'
+            className='btn glow'
             onFocus={handleFocus}
             onBlur={handleBlur}
           >
